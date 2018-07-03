@@ -1,0 +1,54 @@
+<%- include navbar %>
+	
+<style>
+	.blog_heading
+	{
+		margin-top: 80px;
+	}
+</style>
+
+	<div class="container-fluid col-md-12 blog" id="blog_container">
+		<div class="container-fluid row heading heading text-center blog_heading">
+			<h1>LATEST BLOG POSTS<hr align="center" class="blogs_highlight"></h1>
+		</div>
+		<div class="container blog_container">
+			<div class="row">
+				<div class="panel-group">
+					<% for(var i=0; i< 3; i++) { %>
+						<div class="col-md-4">
+							<div class="panel ">
+								<div class="col-md-12 panel-heading">
+									<img src="<%= data_blog[i].blog_img%>" class="img-resonsive img-thumbnail">
+								</div>
+								<div class="panel-body panel-one">
+									<div class="col-md-12">
+										<div class="col-md-3">
+											<a href="/blog_page_link/<%= data_blog[i].blog_title %>/<%= data_blog[i].blog_id %>">
+												<button class="btn btn-defalut blog_button">VIEW</button>
+											</a>
+										</div>
+										<div class="col-md-8 col-md-offset-1">
+											<h4 id="name_color">by <%= data_blog[i].blog_author %></h4>
+										</div>
+									</div>
+									<div class="col-md-12 news_container">
+										<h4><a href="#" class="blog_a"><%= data_blog[i].blog_title %></a></h4>
+									</div>
+								</div>
+								<div class="panel-footer blog_footer">
+										<h5 class="text-center blog_date"><%= data_blog[i].blog_date %></h5>
+								</div>
+							</div>
+						</div>
+					<% } %>
+				</div>
+
+				<div class="text-center col-md-12">
+					<a href="/blog_post"><button class="btn btn-defalut all_blog_button">VIEW ALL BLOG POSTS</button></a>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+
+</body>

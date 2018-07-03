@@ -1,0 +1,159 @@
+<%- include navbar %>
+<style>
+.container-fluid
+	{
+		padding: 0px;
+		margin:0px;
+	}
+	.row
+	{
+		width: 100%;
+		overflow: hidden;
+		margin: 0px;
+	}
+	button:focus, a:focus 
+	{
+    outline: none !important;
+	}
+	a
+	{
+		text-decoration: none !important;
+		color: #e5e7e8;
+	}
+	a:hover
+	{
+		color: white;
+	}
+	.gallery_heading
+	{
+		position: absolute;
+	    top: 33%;
+	    text-align: center;
+	    color: white;
+	    margin-left: 190px;
+	    font-family: 'Roboto Slab', serif;
+	}
+	.gallery_heading h2
+	{
+		font-size: 70px;
+		color: #cbb9a6;
+		margin-left: 105px;
+	}
+	.blog_image
+	{
+		margin-top: 100px;
+		margin-bottom: 35px;
+	}
+	.blog_para1
+	{
+		margin-top: 35px;
+		margin-bottom: 20px;
+		text-align: justify;
+		font-family: 'PT Serif', serif;
+		color: #928b84;
+		font-size:15px;
+		line-height: 23px;
+	}
+	.blog_para2
+	{
+		margin-bottom: 25px;
+		text-align: justify;
+		font-family: 'PT Serif', serif;
+		color: #928b84;
+		font-size:15px;
+		line-height: 23px;
+	}
+	.tags
+	{
+		margin-bottom: 15px;
+		color: #a3ad6f;
+	}
+	.date
+	{
+		color: #cbb9a6;
+	}
+	.author
+	{
+		font-family: 'PT Serif', serif;
+		color: #cbb9a6;
+		font-size:15px;
+		line-height: 21px;
+	}
+	.share
+	{
+		margin-bottom: 50px;
+	}
+	.share_links
+	{
+		font-size: 21px;
+		color: #a3ad6f;
+	}
+	.round_img
+	{
+		border-radius: 7px;
+	}
+
+	@media (max-width: 1200px) 
+	{
+		.gallery_heading
+		{
+			top: -4%;
+			margin-left: -100px;
+		}
+		.gallery_heading h2
+		{
+			font-size: 36px;
+		}
+		.blog_container
+		{
+			margin-top: 74px;
+		}
+	}
+</style>
+
+
+<div class="container-fluid col-md-12 blog_container">
+	<img src="/static/banner.png" class="img-responsive">
+	<div class="gallery_heading">
+		<h2 class="text-center"><%= blog_page_title %></h2>
+	</div>
+</div>
+
+<div class="container">
+	<% for(var i=0; i< blog_page_data.length; i++) 
+			{  
+				if(blog_page_data[i].blog_id ==  blog_page_id ) 
+				{ %>
+					
+					<div class="col-md-7 col-md-offset-2 blog_image">
+						<img src="../../.<%= blog_page_data[i].blog_img %>" class="img-responsive round_img">
+					</div>
+					<div class="col-md-5 col-md-offset-2 date">
+						<%= blog_page_data[i].blog_date %>
+					</div>
+					<div class="col-md-5 author">
+						By <%= blog_page_data[i].blog_author %>
+					</div>
+					<div class="col-md-7 col-md-offset-2 blog_para1">
+						<%= blog_page_data[i].blog_description %>
+					</div>
+					<div class="col-md-7 col-md-offset-2 blog_para2">
+						<%= blog_page_data[i].blog_description %>
+					</div>
+
+					<div class="col-md-7 col-md-offset-2 tags">
+						<span style="color: #cbb9a6">T A G S</span> : Wedding, &nbsp;  Parties, &nbsp;  Events
+					</div>
+
+					<div class="col-md-7 col-md-offset-2 share">
+						<span style="color: #cbb9a6; font-size: 15px">S H A R E</span> :
+						<a href="#" class="facebook share_links"><i class="fab fa-facebook-f"></i></a> &nbsp;
+						<a href="#" class="twitter share_links"><i class="fab fa-twitter"></i></a> &nbsp;
+						<a href="#" class="instagram share_links"><i class="fab fa-instagram"></i></a> &nbsp;
+						<a href="#" class="googleplus share_links"><i class="fab fa-google-plus-g"></i></a> &nbsp;
+					</div>
+						
+				<% } %>
+
+			<% } %>
+</div>

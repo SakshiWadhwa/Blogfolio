@@ -1,0 +1,85 @@
+.container-fluid
+	{
+		padding: 0px;
+		margin:0px;
+	}
+	.row
+	{
+		width: 100%;
+		overflow: hidden;
+		margin: 0px;
+	}
+	button:focus, a:focus 
+	{
+    outline: none !important;
+	}
+	a
+	{
+		text-decoration: none !important;
+		color: #e5e7e8;
+	}
+	a:hover
+	{
+		color: white;
+	}
+	.gallery_heading
+	{
+		position: absolute;
+	    top: 33%;
+	    text-align: center;
+	    color: white;
+	    margin-left: 448px;
+	    font-family: 'Roboto Slab', serif;
+	}
+	.gallery_heading h2
+	{
+		font-size: 70px;
+		color: #cbb9a6;
+	}
+	.blog_heading
+	{
+		font-family: 'Courgette', cursive;
+		margin-top: 100px;
+		/*color: #cbb9a6;*/
+		color: #a3ad6f;
+	}
+	.blog_heading:hover
+	{
+		color: #cbb9a6 ;
+	}
+	.blog_date
+	{
+		margin-left: -15px;
+		/*color: #a3ad6f;*/
+		color: #cbb9a6;
+	}
+	.blog_author
+	{
+		margin-left: 15px;
+		/*color: #a3ad6f;*/
+		color: #cbb9a6;
+	}
+	.blogs
+	{
+		margin-bottom: 100px !important;
+	}
+	@media (max-width: 500px) 
+	{
+		.gallery_heading
+		{
+			margin-left: 70px;
+			top: 0%;
+		}
+		.gallery_heading h2
+		{
+			font-size: 50px;
+		}
+		.blog_author
+		{
+			margin-left: -10px;
+		}
+		.blog_date
+		{
+			margin-left: -9px;
+		}
+	}
